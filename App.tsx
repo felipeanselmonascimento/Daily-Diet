@@ -10,3 +10,4 @@ export default function App() {
   );
 }
 
+// themeprovider sendo compartilhado por toda aplicacao atraves do styled
