@@ -6,10 +6,17 @@ import { useState } from 'react';
 import { FlatList } from 'react-native';
 import { ListEmpty } from '@components/ListEmpty';
 import { Button } from '@components/Button'
+import { useNavigation } from '@react-navigation/native';
 
 export function Groups() {
 
     const [groups, setGroups] = useState<string[]>(['RocketSeat Team', 'Prodec Team', 'eGovTeam'])
+
+    const { navigate } = useNavigation()
+
+    function handleNewGroup () {
+        navigate('new') //sem sugestoes de qual opcoes de rota tem, por isso criado o navigation.d.ts
+    }
 
     return (
         <Container>
@@ -29,6 +36,7 @@ export function Groups() {
 
             <Button
                 title='Create new team'
+                onPress={handleNewGroup}
             />
 
         </Container>
